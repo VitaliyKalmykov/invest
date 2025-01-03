@@ -1,7 +1,9 @@
 import React from 'react';
-import sprite from '../assets/sprite.svg';
+import sprite from '../../assets/sprite.svg';
+import HeaderNav from "./HeaderNav";
+import Button from "../UI/Button";
 
-const Header = () => {
+const Header = ({setActiveSection}) => {
     return (
         <header className="bg-blue-950">
             <div className="container">
@@ -11,13 +13,24 @@ const Header = () => {
                             <use xlinkHref={`${sprite}#money`}/>
                         </svg>
                     </div>
-                    <nav className="flex-1 flex  justify-around items-center gap-2">
-                        <a className="text-xl font-medium" href={"#"}>More about us</a>
-                        <a className="text-xl font-medium" href={"#"}>Successful cases </a>
-                        <a className="text-xl font-medium" href={"#"}>Order a consultation</a>
-                        <a className="text-xl font-medium" href={"#"}>Contacts </a>
-                    </nav>
-                    <button className="pl-3 pr-3 pt-0 border-2 text-xl">Get started now</button>
+                    <HeaderNav setActiveSection={setActiveSection} />
+                    <Button
+                        type="button"
+                        className={
+                            `px-6 py-3 
+                           bg-blue-500 
+                           text-white font-semibold 
+                             rounded-xl shadow-md 
+                             transition-all duration-300 ease-in-out 
+                            hover:bg-blue-700 hover:scale-110 
+                            active:bg-blue-800 
+                              focus:outline-none 
+                              focus:ring-2 
+                            focus:ring-blue-400`
+                        }
+                    >
+                        Get started
+                    </Button>
                 </div>
             </div>
         </header>
