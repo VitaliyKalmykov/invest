@@ -1,23 +1,27 @@
 import React from 'react';
-import sprite from '../../assets/sprite.svg';
+import sprite from '../../assets/symbol-defs.svg';
 import HeaderNav from "./HeaderNav";
 import Button from "../UI/Button";
+import HeaderSidebar from "./HeaderSidebar";
 
-const Header = ({setActiveSection}) => {
+const Header = () => {
     return (
         <header className="bg-blue-950">
             <div className="container">
-                <div className="flex justify-around text-center p-4 gap-2">
+                <div className="flex justify-around items-center text-center p-4 gap-2">
                     <div>
-                        <svg className={"w-28 h-24"}>
+                        <svg className={"w-12 h-12 block fill-green-600"}>
                             <use xlinkHref={`${sprite}#money`}/>
                         </svg>
                     </div>
-                    <HeaderNav setActiveSection={setActiveSection} />
+                    <HeaderNav />
+                    <HeaderSidebar/>
                     <Button
                         type="button"
                         className={
                             `px-6 py-3 
+                            md:px-3
+                            sm:px-2
                            bg-blue-500 
                            text-white font-semibold 
                              rounded-xl shadow-md 

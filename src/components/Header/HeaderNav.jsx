@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import HeaderLink from "./HeaderLink";
 
-const HeaderNav = ({setActiveSection}) => {
+const HeaderNav = () => {
 
     const links = [{
         linkText: "More about us",
@@ -25,19 +25,19 @@ const HeaderNav = ({setActiveSection}) => {
     const navigate = useNavigate();
 
     const handleNavigation = (linkAddress) => {
-        setActiveSection(linkAddress);  // Оновлюємо активну секцію
         navigate(`/${linkAddress}`);     // Змінюємо маршрут
     };
 
     return (
-        <nav className="flex flex-1 justify-around items-center">
+        <nav className="flex flex-1 gap-1 justify-around items-center md:hidden sm:hidden">
             {links.map((link, index) => (
                 <HeaderLink
                     key={index}
                     onClick={(e) => {e.preventDefault(); handleNavigation(link.linkAddress)}}
                     className="
 
-                    text-2xl
+                    text-lg
+
                     text-blue-500
                     hover:text-blue-700
 
