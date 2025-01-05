@@ -15,9 +15,8 @@ const HeaderSidebar = () => {
             <svg onClick={toggleSidebar} className={`w-12 h-9 
             cursor-pointer 
             z-50 
-            rotate-90
             transition-all duration-300 
-            relative ${isSidebarOpen ? '-rotate-90' : "" }`}>
+            relative ${isSidebarOpen ? '-rotate-90' : "rotate-90" }`}>
                 <use className="z-50" xlinkHref={`${sprite}#arrow`}/>
             </svg>
             <div
@@ -26,7 +25,7 @@ const HeaderSidebar = () => {
                     isSidebarOpen ? "translate-x-0" : "-translate-x-full"
                 } transition-transform duration-300 ease-in-out`}
             >
-                <HeaderNav />
+                <HeaderNav setIsSidebarOpen={setIsSidebarOpen} />
             </div>
         </div>
     );

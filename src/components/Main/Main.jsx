@@ -5,12 +5,14 @@ import More from './MoreSection/More';
 import Contacts from './ContactsSection/Contacts';
 import Consult from './ConsultSection/Consult';
 import Cases from './CasesSection/Cases';
+import Modal from '../Modal/Modal';
 
 const Main = () => {
     const location = useLocation(); // Get current location
 
     return (
         <main>
+            <Modal/>
             <AnimatePresence mode="wait">
                 <motion.div
                     key={location.pathname} // Кожен маршрут повинен мати унікальний key

@@ -8,18 +8,21 @@ const Header = () => {
     return (
         <header className="bg-blue-950">
             <div className="container">
-                <div className="flex justify-around items-center text-center p-4 gap-2">
-                    <div>
+                <div className="flex justify-between items-center text-center p-4 gap-2">
+                    <div className="z-50">
                         <svg className={"w-12 h-12 block fill-green-600"}>
                             <use xlinkHref={`${sprite}#money`}/>
                         </svg>
                     </div>
-                    <HeaderNav />
+                    <div className="flex flex-1 md:hidden sm:hidden">
+                        <HeaderNav />
+                    </div>
                     <HeaderSidebar/>
                     <Button
                         type="button"
                         className={
                             `px-6 py-3 
+                            z-50
                             md:px-3
                             sm:px-2
                            bg-blue-500 

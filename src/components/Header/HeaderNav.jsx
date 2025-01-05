@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import HeaderLink from "./HeaderLink";
 
-const HeaderNav = () => {
+const HeaderNav = ({setIsSidebarOpen}) => {
 
     const links = [{
         linkText: "More about us",
@@ -29,11 +29,16 @@ const HeaderNav = () => {
     };
 
     return (
-        <nav className="flex flex-1 gap-1 justify-around items-center md:hidden sm:hidden">
+        <nav className="
+        flex flex-1 gap-20 justify-center
+        xl:items-center
+        md:flex-col h-full
+        sm:flex-col"
+        >
             {links.map((link, index) => (
                 <HeaderLink
                     key={index}
-                    onClick={(e) => {e.preventDefault(); handleNavigation(link.linkAddress)}}
+                    onClick={(e) => {e.preventDefault(); handleNavigation(link.linkAddress); setIsSidebarOpen(false)}}
                     className="
 
                     text-lg
