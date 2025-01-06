@@ -30,7 +30,7 @@ const HeaderNav = ({setIsSidebarOpen}) => {
 
     return (
         <nav className="
-        flex flex-1 gap-20 justify-center
+        flex flex-1 justify-around items-center
         xl:items-center
         md:flex-col h-full
         sm:flex-col"
@@ -74,3 +74,4 @@ const HeaderNav = ({setIsSidebarOpen}) => {
 };
 
 export default HeaderNav;
+

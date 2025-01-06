@@ -1,10 +1,8 @@
-import React,{useState} from 'react';
+import React from 'react';
 import sprite from "../../assets/symbol-defs.svg"
 import HeaderNav from "./HeaderNav";
 
-const HeaderSidebar = () => {
-
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+const HeaderSidebar = ({isSidebarOpen, setIsSidebarOpen, headerHeight}) => {
 
     function toggleSidebar() {
         setIsSidebarOpen(!isSidebarOpen);
@@ -21,9 +19,20 @@ const HeaderSidebar = () => {
             </svg>
             <div
                 className={`fixed top-0 left-0 h-full w-full 
-                bg-blue-900 text-white transform ${
+                bg-blue-900 text-white transform 
+                
+                overflow-y-auto overflow-x-auto
+                
+                 ${
                     isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-                } transition-transform duration-300 ease-in-out`}
+                } 
+                transition-transform duration-300 ease-in-out`
+            }
+
+                style={{
+                    top: `${headerHeight}px`,
+                    height: `calc(100% - ${headerHeight}px)`,
+                }}
             >
                 <HeaderNav setIsSidebarOpen={setIsSidebarOpen} />
             </div>

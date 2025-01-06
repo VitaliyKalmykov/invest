@@ -1,13 +1,29 @@
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import sprite from '../../assets/symbol-defs.svg';
 import HeaderNav from "./HeaderNav";
 import Button from "../UI/Button";
 import HeaderSidebar from "./HeaderSidebar";
 
-const Header = () => {
+const Header = ({setIsModalOpen}) => {
+
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+    const headerRef = useRef(null);
+    const [headerHeight, setHeaderHeight] = useState(0);
+
+    useEffect(() => {
+        if(headerRef.current){
+            setHeaderHeight(headerRef.current.clientHeight)
+        }
+    }, []);
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    }
+
     return (
-        <header className="bg-blue-950">
-            <div className="container">
+        <header ref={headerRef} className="bg-blue-950">
+            <div className="container relative">
                 <div className="flex justify-between items-center text-center p-4 gap-2">
                     <div className="z-50">
                         <svg className={"w-12 h-12 block fill-green-600"}>
@@ -15,9 +31,9 @@ const Header = () => {
                         </svg>
                     </div>
                     <div className="flex flex-1 md:hidden sm:hidden">
-                        <HeaderNav />
+                        <HeaderNav setIsSidebarOpen={setIsSidebarOpen} />
                     </div>
-                    <HeaderSidebar/>
+                    <HeaderSidebar isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} headerHeight={headerHeight}/>
                     <Button
                         type="button"
                         className={
@@ -35,6 +51,9 @@ const Header = () => {
                               focus:ring-2 
                             focus:ring-blue-400`
                         }
+
+                        onClick={openModal}
+
                     >
                         Get started
                     </Button>

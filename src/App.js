@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import { BrowserRouter as Router } from "react-router-dom"; // Імпортуємо BrowserRouter
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
+import Modal from "./components/Modal/Modal";
 
 function App() {
 
@@ -10,8 +11,9 @@ function App() {
   return (
     <>
         <Router> {/* Обгортаємо весь додаток в Router */}
-            <Header />
+            <Header setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} />
             <Main/>
+            <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
         </Router>
     </>
   );
