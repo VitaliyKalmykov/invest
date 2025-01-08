@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TextInput = ({ type, id, placeholder, htmlFor, labelName, name}) => {
+const TextInput = ({ type, id, placeholder, htmlFor, labelName, name, onChange, value}) => {
     return (
         <div className="flex gap-2 items-center justify-center">
             <label className={"whitespace-nowrap"}
@@ -12,6 +12,8 @@ const TextInput = ({ type, id, placeholder, htmlFor, labelName, name}) => {
                    id={id}
                    placeholder={placeholder}
                    name={name}
+                   onChange={onChange}
+                   value={value}
             />
         </div>
     );
