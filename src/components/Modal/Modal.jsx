@@ -27,14 +27,14 @@ const Modal = ({ isModalOpen, setIsModalOpen }) => {
             >
                 {/*кнопка закриття*/}
                 <Button
-                    className="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
+                    className="absolute text-2xl text-red-900 top-3 right-3 text-gray-400 hover:text-gray-600"
                     onClick={() => setIsModalOpen(false)} // Закриття при натисканні на іконку
                 >
                     &times; {/* Іконка закриття */}
                 </Button>
                <div>
-                   <h2 className="text-center font-bold">Start earning with us! </h2>
-                   <h3 className="text-center">Request a call and we will contact you to clarify all the details</h3>
+                   <h2 className="text-center font-bold xl:text-xl md:text-lg sm:text-lg">Start earning with us! </h2>
+                   <h3 className="text-center xl:text-xl md:text-lg sm: text-lg">Request a call here</h3>
                    <ModalForm/>
                </div>
             </div>

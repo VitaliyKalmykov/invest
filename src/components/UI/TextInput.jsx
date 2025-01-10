@@ -7,7 +7,7 @@ const TextInput = ({ type, id, placeholder, htmlFor, labelName, name, onChange, 
                 htmlFor={htmlFor}>
                 {labelName}
             </label>
-            <input className="w-full border-2"
+            <input className="w-full border-2 p-2 rounded-xl"
                    type={type}
                    id={id}
                    placeholder={placeholder}
