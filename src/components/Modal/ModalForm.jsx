@@ -134,6 +134,7 @@ const ModalForm = () => {
                 </div>
                 {errors.budget && <span className="text-red-500">{errors.budget}</span>}
             </div>
+            {/*textarea*/}
             <div className="w-full">
                 <h2>Your requests to our specialists:</h2>
                 <textarea
@@ -151,6 +152,7 @@ const ModalForm = () => {
                     {formData.message.length}/{maxMessageLength} characters
                 </div>
             </div>
+            {/*checkbox*/}
             <div className="flex relative gap-2 pb-4">
                 <input
                     type="checkbox"
