@@ -1,15 +1,16 @@
 import React, {useState} from 'react';
 import MoreItems from "./MoreItems";
+import FAQContent from "./MoreContainersContent/FAQContent";
 
 const MoreContainers = () => {
 
     const [expandedId, setExpandedId] = useState(null);
 
     const items = [
-        { id: 1, text: 'F.A.Q' },
-        { id: 2, text: 'Our specialists' },
-        { id: 3, text: 'History of the company' },
-        { id: 4, text: 'Pros and cons of working with us' },
+        { id: 1, text: 'F.A.Q', component: <FAQContent/> },
+        { id: 2, text: 'Our specialists', },
+        { id: 3, text: 'History of the company', },
+        { id: 4, text: 'Pros and cons of working with us', },
     ];
 
     const handleExpand = (id) => {

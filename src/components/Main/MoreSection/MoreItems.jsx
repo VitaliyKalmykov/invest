@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from "../../UI/Button";
 
-const MoreItems = ({item, onExpand, expandedId}) => {
+const MoreItems = ({item, onExpand, expandedId, component}) => {
     return (
         <div
             className={`group
@@ -13,7 +13,7 @@ const MoreItems = ({item, onExpand, expandedId}) => {
                        ${expandedId === item.id ? 'absolute inset-0 z-50 bg-white justify-start' : 'hover:scale-110 h-full justify-center'}`}
         >
                     <span
-                        className={`relative mt-8
+                        className={`relative 
                         border-transparent
                         transition-all duration-300 ease-in
                         ${expandedId !== item.id ? 'group-hover:border group-hover:border-blue-500 group-hover:px-2' 
@@ -60,6 +60,9 @@ const MoreItems = ({item, onExpand, expandedId}) => {
                 </div>
 
             </Button>
+            <div className={`${expandedId === item.id ? 'block overflow-y-auto' : 'hidden'}`}>
+                {item.component}
+            </div>
         </div>
     );
 };
