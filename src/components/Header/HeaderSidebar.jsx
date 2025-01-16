@@ -18,7 +18,10 @@ const HeaderSidebar = ({isSidebarOpen, setIsSidebarOpen, headerHeight}) => {
                 <use className="z-50" xlinkHref={`${sprite}#arrow`}/>
             </svg>
             <div
-                className={`fixed top-0 left-0 h-full w-full 
+                className={`fixed
+                z-50
+                top-0 left-0 h-full
+                w-full 
                 bg-blue-900 text-white transform 
                 
                 overflow-y-auto overflow-x-auto

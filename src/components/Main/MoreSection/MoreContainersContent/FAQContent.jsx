@@ -127,7 +127,7 @@ const FaqContent = () => {
         <div>
             <div className="grid gap-4 xl:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 p-6 border-t">
                 {faqData.map(item => (
-                    <div className="text-sm text-start
+                    <div className="text-lg text-start
                         flex justify-center items-center flex-col gap-2
                         border p-2" key={item.id}>
                         <p className="border">Question</p>
@@ -137,10 +137,10 @@ const FaqContent = () => {
 
                 {/* Модалка */}
                 {isModalOpen && (
-                    <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
-                        <div className="bg-white p-6 rounded-lg w-1/2">
+                    <div className="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center p-6">
+                        <div className="bg-white p-6 rounded-lg w-auto">
                             <h2 className="text-lg font-bold">Answer</h2>
-                            <p className="mt-4 text-lg">{currentAnswer}</p>
+                            <p className="mt-4 text-start text-xl">{currentAnswer}</p>
                             <Button type="button" className="mt-4 border p-2" onClick={closeModal}>
                                 Close
                             </Button>

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import MoreItems from "./MoreItems";
 import FAQContent from "./MoreContainersContent/FAQContent";
+import SpecialistContent from "./MoreContainersContent/SpecialistContent";
 
 const MoreContainers = () => {
 
@@ -8,7 +9,7 @@ const MoreContainers = () => {
 
     const items = [
         { id: 1, text: 'F.A.Q', component: <FAQContent/> },
-        { id: 2, text: 'Our specialists', },
+        { id: 2, text: 'Our specialists', component: <SpecialistContent/> },
         { id: 3, text: 'History of the company', },
         { id: 4, text: 'Pros and cons of working with us', },
     ];
@@ -19,7 +20,17 @@ const MoreContainers = () => {
 
 
     return (
-        <div className="relative grid grid-cols-2 align-center justify-center text-center gap-8 h-[60vh] w-full">
+        <div className="relative
+        grid grid-cols-2 align-center justify-center
+        text-center
+        w-full
+        xl:gap-8
+        xl:h-[70vh]
+        md:gap-6
+        md:h-[55vh]
+        sm:gap-4
+        sm:h-[45vh]
+        ">
             {items.map((item) => (
                 <MoreItems key={item.id}  item={item} onExpand={handleExpand} expandedId={expandedId} />
             ))}

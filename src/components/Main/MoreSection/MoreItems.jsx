@@ -7,10 +7,13 @@ const MoreItems = ({item, onExpand, expandedId, component}) => {
             className={`group
             border-2
             flex items-center flex-col
-            font-bold text-2xl
+            font-bold 
+            xl:text-2xl
+            md:text-lg
+            sm:text-sm
             shadow-xl rounded-2xl
             transition-all duration-300 ease-in
-                       ${expandedId === item.id ? 'absolute inset-0 z-50 bg-white justify-start' : 'hover:scale-110 h-full justify-center'}`}
+                       ${expandedId === item.id ? 'absolute inset-0 z-20 bg-white justify-start' : 'hover:scale-110 h-full justify-center'}`}
         >
                     <span
                         className={`relative 
