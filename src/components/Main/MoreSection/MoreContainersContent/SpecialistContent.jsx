@@ -53,9 +53,25 @@ const SpecialistContent = () => {
     ];
 
     return (
-        <div className="p-6">
-            <h2 className="text-center font-semibold text-2xl mb-4">Professionals who are always in touch</h2>
-            <div className="grid grid-cols-4 gap-2 p-6">
+        <div className="
+        xl:p-6
+        md:p-4
+        sm:p-2
+        ">
+            <h2 className="
+            text-center
+            font-semibold
+            xl:text-2xl
+            md:text-xl
+            sm:text-lg
+            mb-1
+            ">Professionals who are always in touch</h2>
+            <div className="grid justify-center
+            xl:grid-cols-4
+            md:grid-cols-2
+            sm:grid-cols-1
+            gap-2
+            p-6">
                 {specData.map((specialist) => (
                     <div
                         key={specialist.id}
@@ -70,7 +86,7 @@ const SpecialistContent = () => {
                     </div>
                 ))}
             </div>
-            <p className="text-start font-medium text-lg">
+            <p className="text-start font-medium xl:text-xl md:text-lg sm:text-sm">
                 Our company takes pride in assembling a team of highly skilled and dedicated professionals.
                 To ensure only the best candidates join our ranks, we implement a rigorous selection process that evaluates both professional expertise and personal qualities.
             </p>
