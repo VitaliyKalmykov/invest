@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 import Button from "../../../UI/Button";
+import TextInput from "../../../UI/TextInput";
 
 const FaqContent = () => {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [currentAnswer, setCurrentAnswer] = useState('');
+    const [searchItem, setSearchItem] = useState('');
 
 
     //об'єкт факдата з вопросами та відповідями
@@ -111,6 +113,11 @@ const FaqContent = () => {
         }
     ];
 
+    // Фільтрація питань на основі пошукового запиту
+    const filteredFaqs = faqData.filter(item =>
+        item.question.toLowerCase().includes(searchItem.toLowerCase())
+    );
+
  //відкриття модалки, оновлюємо стан поточної відповіді та модалки
     const openModal = (answer) => {
         setCurrentAnswer(answer);
@@ -125,15 +132,35 @@ const FaqContent = () => {
 
     return (
         <div>
+
+            {/* Пошуковий рядок */}
+            <div className="p-4">
+                <TextInput
+                    type="text"
+                    placeholder="Search questions..."
+                    value={searchItem}
+                    onChange={(e) => setSearchItem(e.target.value)}
+                    className="w-full border p-2 rounded-lg"
+                />
+            </div>
+
             <div className="grid gap-4 xl:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 p-6 border-t">
-                {faqData.map(item => (
-                    <div className="text-lg text-start
-                        flex justify-center items-center flex-col gap-2
-                        border p-2" key={item.id}>
-                        <p className="border">Question</p>
-                        {item.question}
-                        <Button onClick={() => openModal(item.answer)} type="button" className={"border p-2 text-sm"}>Answer</Button></div>
-                ))}
+
+                {filteredFaqs.length > 0 ? (
+                    filteredFaqs.map(item => (
+                        <div className="text-lg text-start
+                            flex justify-center items-center flex-col gap-2
+                            border p-2" key={item.id}>
+                            <p className="border">Question</p>
+                            {item.question}
+                            <Button onClick={() => openModal(item.answer)} type="button" className={"border p-2 text-sm"}>Answer</Button>
+                        </div>
+                    ))
+                ) : (
+                    <div className="text-center col-span-full text-gray-600">
+                        <p>No questions found. Try searching with different keywords.</p>
+                    </div>
+                )}
 
                 {/* Модалка */}
                 {isModalOpen && (

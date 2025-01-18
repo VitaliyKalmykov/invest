@@ -86,7 +86,7 @@ const SpecialistContent = () => {
                     </div>
                 ))}
             </div>
-            <p className="text-start font-medium xl:text-xl md:text-lg sm:text-sm">
+            <p className="text-start font-medium xl:text-2xl md:text-lg sm:text-sm">
                 Our company takes pride in assembling a team of highly skilled and dedicated professionals.
                 To ensure only the best candidates join our ranks, we implement a rigorous selection process that evaluates both professional expertise and personal qualities.
             </p>

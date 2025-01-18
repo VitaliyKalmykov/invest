@@ -3,6 +3,7 @@ import MoreItems from "./MoreItems";
 import FAQContent from "./MoreContainersContent/FAQContent";
 import SpecialistContent from "./MoreContainersContent/SpecialistContent";
 import HistoryContent from "./MoreContainersContent/HistoryContent";
+import ProsConsContent from "./MoreContainersContent/ProsConsContent";
 
 const MoreContainers = () => {
 
@@ -12,7 +13,7 @@ const MoreContainers = () => {
         { id: 1, text: 'F.A.Q', component: <FAQContent/> },
         { id: 2, text: 'Our specialists', component: <SpecialistContent/> },
         { id: 3, text: 'History of the company', component: <HistoryContent/> },
-        { id: 4, text: 'Pros and cons of working with us', },
+        { id: 4, text: 'Pros and cons of working with us', component: <ProsConsContent/> },
     ];
 
     const handleExpand = (id) => {
