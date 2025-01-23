@@ -31,7 +31,7 @@ const MoreContainers = () => {
         md:gap-6
         md:h-[55vh]
         sm:gap-4
-        sm:h-[45vh]
+        sm:h-[50vh]
         ">
             {items.map((item) => (
                 <MoreItems key={item.id}  item={item} onExpand={handleExpand} expandedId={expandedId} />

@@ -126,7 +126,7 @@ const commentsData = [
 const CasesFeedBack = () => {
     return (
         <div className="mx-auto py-6">
-            <h2 className="text-center font-bold text-xl mb-2">Customer Feedback</h2>
+            <h2 className="text-center font-bold text-xl mb-2">Customers Feedback</h2>
             <div className="
             grid gap-4
             xl:grid-cols-4
