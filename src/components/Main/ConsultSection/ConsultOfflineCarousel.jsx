@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from '../../UI/Button'
 
 import OfficeConsult1 from '../../../assets/carousel/OfficeConsult1.jpg';
 import OfficeConsult2 from '../../../assets/carousel/OfficeConsult2.jpg';
@@ -15,6 +16,7 @@ import OfficeConsult12 from '../../../assets/carousel/OfficeConsult12.jpg';
 import OfficeConsult13 from '../../../assets/carousel/OfficeConsult13.jpg';
 import OfficeConsult14 from '../../../assets/carousel/OfficeConsult14.jpg';
 import OfficeConsult15 from '../../../assets/carousel/OfficeConsult15.jpg';
+
 
 const ConsultCarousel = () => {
     const images = [
@@ -36,76 +38,55 @@ const ConsultCarousel = () => {
     ];
 
     const [currentIndex, setCurrentIndex] = useState(0);
-    const gap = 16; // Відстань між зображеннями в пікселях
+
+    const visibleItems = 3;
+
+    const gap = 16;
+
+    const totalWidth = 100 + (gap / visibleItems) * (visibleItems - 1);
+
 
     const handlePrev = () => {
         setCurrentIndex((prevIndex) =>
-            prevIndex === 0 ? images.length - 1 : prevIndex - 1
-        );
+        prevIndex === 0 ? images.length - visibleItems : prevIndex - 1);
     };
 
     const handleNext = () => {
         setCurrentIndex((prevIndex) =>
-            prevIndex === images.length - 1 ? 0 : prevIndex + 1
+            prevIndex === images.length - visibleItems ? 0 : prevIndex + 1
         );
     };
 
     return (
-        <div className="relative w-full overflow-hidden">
-            <h2 className="text-center pt-6 pb-6 font-medium">Office Gallery</h2>
-            <div className="flex items-center justify-between">
-                {/* Кнопка Назад */}
-                <button
-                    onClick={handlePrev}
-                    className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow hover:bg-gray-700 z-10"
-                >
-                    &#8249;
-                </button>
-                {/* Слайди */}
-                <div
-                    className="flex transition-transform duration-500 ease-in-out"
-                    style={{
-                        transform: `translateX(-${(currentIndex * (100 / 3))}%)`,
-                        gap: `${gap}px`, // Додаємо gap між зображеннями
-                    }}
-                >
-                    {images.map((img, index) => (
-                        <div
-                            key={index}
-                            className="flex-shrink-0"
-                            style={{
-                                width: `calc(100% / 3)`, // 3 слайди на великих екранах
-                                marginRight: index !== images.length - 1 ? `${gap}px` : '0', // Відстань між слайдами
-                            }}
-                        >
-                            <img
-                                src={img}
-                                alt={`Slide ${index + 1}`}
-                                className="h-64 object-cover w-full"
-                            />
-                        </div>
-                    ))}
-                </div>
-                {/* Кнопка Вперед */}
-                <button
-                    onClick={handleNext}
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full shadow hover:bg-gray-700 z-10"
-                >
-                    &#8250;
-                </button>
-            </div>
+        <div className="p-2 border-2">
+            <h2 className="text-center font-medium">Office Gallery</h2>
 
-            {/* Точки навігації */}
-            <div className="flex justify-center mt-4 space-x-2">
-                {Array.from({ length: images.length }).map((_, index) => (
-                    <button
-                        key={index}
-                        onClick={() => setCurrentIndex(index)}
-                        className={`w-3 h-3 rounded-full ${
-                            currentIndex === index ? 'bg-gray-800' : 'bg-gray-400'
-                        }`}
-                    ></button>
-                ))}
+            {/* buttons */}
+
+            <div className="relative border-2 p-6 bg-white">
+                <Button onClick={handlePrev} type={"button"} className="absolute left-1 top-1/2 cursor-pointer">1</Button>
+                <Button onClick={handleNext} type={"button"} className="absolute right-1 top-1/2 cursor-pointer">2</Button>
+
+                {/* slider */}
+
+                <div className="overflow-hidden w-full">
+                    <div className="flex gap-2 transition-transform duration-500"
+                         style={{
+                             transform: `translateX(-${
+                                 currentIndex * (totalWidth / visibleItems)
+                             }%)`,
+
+                         }}>
+                        {images.map((image, index) => {
+                            return (
+                                <div className={"w-96 h-44 flex-shrink-0"} key={index}>
+                                    <img className={"h-full w-full object-cover"} src={image}
+                                         alt={`Office Image ${index + 1}`}/>
+                                </div>
+                            )
+                        })}
+                    </div>
+                </div>
             </div>
         </div>
     );
