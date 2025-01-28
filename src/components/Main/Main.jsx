@@ -6,7 +6,7 @@ import Contacts from './ContactsSection/Contacts';
 import Consult from './ConsultSection/Consult';
 import Cases from './CasesSection/Cases';
 
-const Main = () => {
+const Main = ({setIsModalOpen}) => {
     const location = useLocation(); // Get current location
 
     return (
@@ -23,7 +23,7 @@ const Main = () => {
                         <Route path="/" element={<More />} />
                         <Route path="/more" element={<More />} />
                         <Route path="/contacts" element={<Contacts />} />
-                        <Route path="/consultation" element={<Consult />} />
+                        <Route path="/consultation" element={<Consult setIsModalOpen={setIsModalOpen} />} />
                         <Route path="/cases" element={<Cases />} />
                         {/* Якщо шлях не існує, перенаправляємо на /more */}
                         <Route path="*" element={<Navigate to="/more" />} />

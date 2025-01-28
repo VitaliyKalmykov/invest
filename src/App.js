@@ -13,7 +13,7 @@ function App() {
     <>
         <Router> {/* Обгортаємо весь додаток в Router */}
             <Header setIsModalOpen={setIsModalOpen} isModalOpen={isModalOpen} />
-            <Main/>
+            <Main setIsModalOpen={setIsModalOpen} />
             <Footer/>
             <Modal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
         </Router>

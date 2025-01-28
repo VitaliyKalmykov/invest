@@ -10,8 +10,8 @@ const Modal = ({ isModalOpen, setIsModalOpen }) => {
         }
     }, [isModalOpen]);
 
-    // Якщо модалка не відкрита, не рендеримо її
-    if (!isModalOpen) return null;
+    if (!isModalOpen) return null; // Якщо модалка не відкрита, не рендеримо її
+
 
 
     return (
@@ -27,7 +27,7 @@ const Modal = ({ isModalOpen, setIsModalOpen }) => {
             >
                 {/*кнопка закриття*/}
                 <Button
-                    className="absolute text-2xl text-red-900 top-3 right-3 text-gray-400 hover:text-gray-600"
+                    className="absolute text-2xl text-red-900 top-3 right-3 hover:text-gray-600"
                     onClick={() => setIsModalOpen(false)} // Закриття при натисканні на іконку
                 >
                     &times; {/* Іконка закриття */}
