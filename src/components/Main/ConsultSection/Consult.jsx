@@ -56,7 +56,7 @@ const Consult = ({ setIsModalOpen }) => {
                         {/* Кнопка для закриття */}
                         <Button
                             onClick={handleClose}
-                            className="z-50 absolute top-2 right-2 w-6 h-6 flex justify-center items-center bg-gray-200 rounded-full hover:bg-gray-300"
+                            className="z-30 absolute -top-5 right-2 w-6 h-6 flex justify-center items-center bg-gray-200 rounded-full hover:bg-gray-300"
                         >
                             ✕
                         </Button>
