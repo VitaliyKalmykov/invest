@@ -26,9 +26,11 @@ const Header = ({setIsModalOpen}) => {
             <div className="container relative">
                 <div className="flex justify-between items-center text-center p-4 gap-2">
                     <div className="z-30">
-                        <svg className={"w-12 h-12 block fill-green-600"}>
-                            <use xlinkHref={`${sprite}#money`}/>
-                        </svg>
+                        <a href="/">
+                            <svg className={"w-12 h-12 block fill-green-600"}>
+                                <use xlinkHref={`${sprite}#money`}/>
+                            </svg>
+                        </a>
                     </div>
                     <div className="flex flex-1 md:hidden sm:hidden">
                         <HeaderNav setIsSidebarOpen={setIsSidebarOpen} />
