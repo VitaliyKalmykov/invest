@@ -25,7 +25,7 @@ const Header = ({setIsModalOpen}) => {
         <header ref={headerRef} className="bg-blue-950">
             <div className="container relative">
                 <div className="flex justify-between items-center text-center p-4 gap-2">
-                    <div className="z-50">
+                    <div className="z-30">
                         <svg className={"w-12 h-12 block fill-green-600"}>
                             <use xlinkHref={`${sprite}#money`}/>
                         </svg>
@@ -38,7 +38,7 @@ const Header = ({setIsModalOpen}) => {
                         type="button"
                         className={
                             `px-6 py-3 
-                            z-50
+                            z-30
                             md:px-3
                             sm:px-2
                            bg-blue-500 

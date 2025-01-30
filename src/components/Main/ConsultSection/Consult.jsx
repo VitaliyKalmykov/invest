@@ -52,7 +52,7 @@ const Consult = ({ setIsModalOpen }) => {
 
                 {/* Відображення вибраного формату консультації */}
                 {selectedFormat && (
-                    <div className="relative bg-white">
+                    <div className="relative bg-white pb-12">
                         {/* Кнопка для закриття */}
                         <Button
                             onClick={handleClose}

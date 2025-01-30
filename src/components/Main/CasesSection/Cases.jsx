@@ -10,7 +10,7 @@ const Cases = () => {
                 maxHeight: "calc(100vh - 5rem)", // Наприклад, мінус відступи чи хедер
             }}
         >
-            <div className="container pb-6 pt-6">
+            <div className="container pb-10 pt-6">
                 <div className="text-center font-black text-2xl sm:text-xl">
                     <h1 className="mb-6">
                         Our breakthrough in the world of investment

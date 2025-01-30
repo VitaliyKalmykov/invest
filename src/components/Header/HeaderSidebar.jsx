@@ -12,10 +12,10 @@ const HeaderSidebar = ({isSidebarOpen, setIsSidebarOpen, headerHeight}) => {
         <div className="xl:hidden">
             <svg onClick={toggleSidebar} className={`w-12 h-9 
             cursor-pointer 
-            z-50 
+            z-30 
             transition-all duration-300 
             relative ${isSidebarOpen ? '-rotate-90' : "rotate-90" }`}>
-                <use className="z-50" xlinkHref={`${sprite}#arrow`}/>
+                <use className="z-30" xlinkHref={`${sprite}#arrow`}/>
             </svg>
             <div
                 className={`fixed

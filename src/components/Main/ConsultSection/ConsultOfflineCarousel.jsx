@@ -79,7 +79,7 @@ const ConsultCarousel = () => {
     const totalDots = Math.ceil(images.length / visibleItems);
 
     return (
-        <div className="p-2">
+        <div>
             <h2 className="text-center font-medium">Office Gallery</h2>
 
             <div className="relative p-6 bg-white">
